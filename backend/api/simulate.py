@@ -1,5 +1,6 @@
 from fastapi import APIRouter
-from schemas.simulate import EnlistRequest, EnlistResponse, ServiceTypeRequest, ServiceTypeResponse, DeadlineResponse
+from schemas.simulate import EnlistRequest, EnlistResponse, ServiceTypeRequest, ServiceTypeResponse
+from services.simulate import SimulateService
 
 router = APIRouter(prefix="/simulate", tags=["simulate"])
 
@@ -9,4 +10,4 @@ async def run_simulation():
 
 @router.post("/enlist", response_model=EnlistResponse)
 async def enlist_simulation(request: EnlistRequest):
-    print("이거 이제 개발할거임")
+    print("시뮬레이터 동작 로직")

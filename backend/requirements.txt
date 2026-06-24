@@ -1,0 +1,29 @@
+# ============================================================
+# mil-ai 백엔드 의존성
+# 설치:  pip install -r requirements.txt
+# ============================================================
+
+# ── 웹 서버 / API ──
+fastapi>=0.110            # API 프레임워크 (main.py, api/simulate.py)
+uvicorn[standard]>=0.27   # ASGI 서버 — `uvicorn main:app --reload` 로 실행
+
+# ── 데이터 검증 / 설정 ──
+pydantic>=2.5             # 스키마 BaseModel (schemas/simulate.py)
+pydantic-settings>=2.1    # BaseSettings 로 .env 로딩 (core/config.py)
+
+# ── 공공데이터 API 호출 ──
+httpx>=0.26               # 병무청 API 비동기 호출 (public_data/mma.py)
+
+# ── 날짜 계산 ──
+python-dateutil>=2.8      # relativedelta — 연기기한 계산 (services/simulate.py)
+
+
+# ============================================================
+# (친구 RAG/LLM 파트 — 같은 가상환경에서 함께 돌릴 때만 주석 해제)
+# 지금 백엔드 7개 파일은 아래를 import 하지 않으므로 일단 비활성화
+# ============================================================
+# langchain                 # RAG 체인
+# langchain-ollama          # Ollama(Qwen2.5) 연결
+# chromadb                  # 벡터 DB
+# pdfplumber                # PDF 법령 문서 파싱
+# pyhwp                     # 한글(.hwp) 문서 파싱 (hwp5 모듈 제공)

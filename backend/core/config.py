@@ -13,3 +13,5 @@ class Settings(BaseSettings):
 
 # 앱 전체에서 공유할 설정 객체 하나 (import 해서 settings.MMA_API_KEY 로 사용)
 settings = Settings()
+
+

@@ -84,5 +84,7 @@ yarn-error.log*
 Thumbs.db
 desktop.ini
 
-handover.md
+# 설명/설계 문서는 깃에 안 올림 (README만 예외)
+*.md
+!README.md
 UI/

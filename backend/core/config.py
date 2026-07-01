@@ -5,6 +5,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     # .env 에서 자동으로 읽어오는거임
     MMA_API_KEY: str #이거 내 공공 데이터 API 인증 키
+    chatbot_url : str
 
     model_config = SettingsConfigDict(
         env_file=".env",            # .env 파일에서 읽어오기
